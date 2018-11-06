@@ -17,6 +17,7 @@ struct Liste{
 };
 typedef struct Liste Liste;
 
+
 Liste* init();
 void add_coureur(Liste* l, Coureur *c);
 

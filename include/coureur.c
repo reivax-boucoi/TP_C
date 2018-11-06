@@ -1,7 +1,7 @@
 #include "coureur.h"
 
 //creer coureur
-  Coureur* creer_coureur(char* name, char* surname,int nb, char*team, int time){
+  Coureur* creer_coureur(char* name, char* surname,int nb, char* team, int time){
     Coureur *c=malloc(sizeof(Coureur));
     c->name= name;
     c->surname= surname;
