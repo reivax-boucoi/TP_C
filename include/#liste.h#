@@ -1,0 +1,32 @@
+#ifndef _LISTE_H_
+#define _LISTE_H_
+
+#include <string.h>
+#include "coureur.h"
+
+struct Elt{
+    Coureur *c;
+    struct Elt* suiv;
+};
+typedef struct Elt Elt;
+
+struct Liste{
+    Elt* head;
+    Elt* current;
+    Elt* tail;
+};
+typedef struct Liste Liste;
+
+Liste* init();
+void add_coureur(Liste* l, Coureur *c);
+
+//4
+
+Coureur get_current_coureur(Liste l);
+void erase_current(Liste *l);//current should point to next available, previous if already at tail
+void sort(Liste *l);
+void swap(Elt* a, Elt* b);
+void display(Liste l);
+
+  
+#endif
