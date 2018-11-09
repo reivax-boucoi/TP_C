@@ -1,13 +1,20 @@
 # TP_C
 Repo de travail Tp language C 3IMACS
 
+###Structure
+ * Programme principal : `main.c`
+ * Programme de test : `test.c`
+ * Dependances : `include/*`
+
 ### Compilation
-On a un makefile!
-* `make` ou `make all` pour générer le a.out
-* `make run` pour compiler et executer immédiatement a.out
-* `make clean` pour nettoyer (supprime a.out, et *.o).
+* `make` ou `make all` pour compiler le main
+* `make run` pour compiler et executer immediatement le main
+* `make test` pour compiler et executer immediatement le programme de test
+* `make clean` pour nettoyer
 ### TODO
-- [ ] Le TP
-- [ ] Mettre affichage coureur en h-min-s
+- [x] Fix add_coureur
+- [x] Mettre affichage coureur en h-min-s
+- [ ] Fix random seed generation not working on Windows
 ### Issues
-We don't have issues here.
+We don't have issues here
+
