@@ -5,7 +5,7 @@
 #include "include/liste.h"
 #include "include/coureur.h"
 
-int NBETAPES=1;
+int NBETAPES=0;
 #define NBTEAM 22
 
 struct Team{
@@ -32,11 +32,14 @@ Liste * parse (char* fileName){
 	printf("NBETAPES : %d\r\n",NBETAPES);
 	
 	while(fgets(tm,100,a)){  //get team name  
-		char* tm1= malloc(sizeof(char)*50);
-		t[j].name=malloc(sizeof(char)*50);
-		strcpy(t[j].name,tm);//add team name to team list
+		char* tm1= malloc(strlen(tm));
+		t[j].name=malloc(strlen(tm));
+        
+        memcpy(t[j].name,tm,strlen(tm)-1);//add team name to team list
+        printf("%s\r\n",t[j].name);
 		t[j].nb_c=0;
 		t[j].time=0;
+        //memcpy(tm1,tm,sizeof(tm)-1);
 		strcpy(tm1,tm);
 		for(int i=0;i<5;i++){
 			fgets(str,100,a);//get runner details
@@ -81,7 +84,7 @@ void display_team(Team t){
 }
 int main(void){
 	Liste* l=parse("fichier_coureurs.txt");
-	
+	/*
 	for(int i=0;i<NBETAPES;i++){//for each etape
 		aller_debut(l);
 		printf("Etape %d\r\n",i+1);
@@ -100,9 +103,10 @@ int main(void){
 			}
 		}
 		sort(l);
-		//display(l); // To show intermediary classement steps, uncomment here <-----------------------------
+		//display(l); // To show intermediary classement steps, uncomment here <-----------------------------------------------------------
 	}
 	printf("Fin de la course, classement final coureurs:\r\n");
+    
 	display(l);
 	
 	printf("\r\nFin de la course, classement final equipes:\r\n");
@@ -122,6 +126,6 @@ int main(void){
 			display_team(t[j]);
 		}
 	}
-
+*/
 	return 0;
 }
