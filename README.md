@@ -1,5 +1,7 @@
 # TP_C
 Repo de travail Tp language C 3IMACS
+> COMBES Pauline
+> BOURLOT Xavier
 
 ### Structure
  * Programme principal : `main.c`
