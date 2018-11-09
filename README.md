@@ -1,7 +1,7 @@
 # TP_C
 Repo de travail Tp language C 3IMACS
 
-###Structure
+### Structure
  * Programme principal : `main.c`
  * Programme de test : `test.c`
  * Dependances : `include/*`
