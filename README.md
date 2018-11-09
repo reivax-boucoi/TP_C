@@ -13,10 +13,13 @@ Repo de travail Tp language C 3IMACS
 * `make run` pour compiler et executer immediatement le main
 * `make test` pour compiler et executer immediatement le programme de test
 * `make clean` pour nettoyer
+
 ### TODO
 - [x] Fix add_coureur
 - [x] Mettre affichage coureur en h-min-s
 - [ ] Fix random seed generation not working on Windows
+- [ ] Delete line break on team name
+
 ### Issues
 We don't have issues here
 
