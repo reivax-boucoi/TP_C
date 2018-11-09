@@ -7,6 +7,7 @@
 
 int NBETAPES=0;
 #define NBTEAM 22
+#define DOPE_RATE 0.01
 
 struct Team{
 	char* name;
@@ -36,11 +37,9 @@ Liste * parse (char* fileName){
 		t[j].name=malloc(strlen(tm));
         
         memcpy(t[j].name,tm,strlen(tm)-1);//add team name to team list
-        printf("%s\r\n",t[j].name);
 		t[j].nb_c=0;
 		t[j].time=0;
-        //memcpy(tm1,tm,sizeof(tm)-1);
-		strcpy(tm1,tm);
+        memcpy(tm1,tm,strlen(tm)-1);
 		for(int i=0;i<5;i++){
 			fgets(str,100,a);//get runner details
 			int nb;
@@ -57,7 +56,8 @@ Liste * parse (char* fileName){
 	}
 	free(tm);
 	free(str);
-	printf("Success parsing\r\n");
+    free(a);
+	printf("Success parsing file !\r\n");
 	return l;
 	}
 }
@@ -84,7 +84,7 @@ void display_team(Team t){
 }
 int main(void){
 	Liste* l=parse("fichier_coureurs.txt");
-	/*
+	printf("Debut de la course !\r\n");
 	for(int i=0;i<NBETAPES;i++){//for each etape
 		aller_debut(l);
 		printf("Etape %d\r\n",i+1);
@@ -92,11 +92,11 @@ int main(void){
 			int time=getEtapeTime();
 			ajouter_temps(l->current->c,time);//ajouter son temps d'etape
 			t[l->current->c->nb_team].time+=time;
-			if(dope(0.01)){//if runner doped
+			if(dope(DOPE_RATE)){//if runner doped
 				printf("\t%s %s est dope !\r\n",l->current->c->name,l->current->c->surname);
 				t[l->current->c->nb_team].nb_c--;//enlever un coureur
 				t[l->current->c->nb_team].time-=l->current->c->time;//enlever le temps des joureurs disqualifies
-				printf("%d runner left in team %s\r\n",t[l->current->c->nb_team].nb_c,t[l->current->c->nb_team].name);
+				printf("\t%d runner left in team %s\r\n",t[l->current->c->nb_team].nb_c,t[l->current->c->nb_team].name);
 				erase_current(l);//remove runner from list
 			}else{
 				avancer(l);//next runner
@@ -126,6 +126,6 @@ int main(void){
 			display_team(t[j]);
 		}
 	}
-*/
+
 	return 0;
 }
