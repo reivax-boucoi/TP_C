@@ -18,7 +18,7 @@ Repo de travail Tp language C 3IMACS
 - [x] Fix add_coureur
 - [x] Mettre affichage coureur en h-min-s
 - [ ] Fix random seed generation not working on Windows
-- [ ] Delete line break on team name
+- [x] Delete line break on team name
 
 ### Issues
 We don't have issues here
